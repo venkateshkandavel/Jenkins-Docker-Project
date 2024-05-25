@@ -4,9 +4,6 @@ FROM centos:latest
 # Set the maintainer label
 LABEL maintainer="vikashashoke@gmail.com"
 
-# Install necessary packages
-RUN yum install -y httpd unzip
-
 # Download the zip file from the URL
 RUN curl -L -o /var/www/html/shine.zip https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip
 
