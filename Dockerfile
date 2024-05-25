@@ -1,9 +1,3 @@
-FROM centos:latest
-MAINTAINER vikashashoke@gmail.com
-
-# Install zip and unzip
-RUN yum install -y zip unzip
-
 # Add the zip file from the URL to the /var/www/html/ directory
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
 
