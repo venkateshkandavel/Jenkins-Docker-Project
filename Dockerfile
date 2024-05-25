@@ -5,7 +5,7 @@ FROM centos:latest
 LABEL maintainer="vikashashoke@gmail.com"
 
 # Download the zip file from the URL
-RUN curl -L -o /var/www/html/shine.zip https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
 
 # Set the working directory to /var/www/html/
 WORKDIR /var/www/html/
