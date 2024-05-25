@@ -1,5 +1,5 @@
 # Use the centos:latest base image
-FROM centos:latest
+FROM nginx:latest
 
 # Set the maintainer label
 LABEL maintainer="vikashashoke@gmail.com"
