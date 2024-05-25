@@ -1,5 +1,14 @@
-# Add the zip file from the URL to the /var/www/html/ directory
-COPY https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
+# Use the centos:latest base image
+FROM centos:latest
+
+# Set the maintainer label
+LABEL maintainer="vikashashoke@gmail.com"
+
+# Install necessary packages
+RUN yum install -y httpd unzip
+
+# Download the zip file from the URL
+RUN curl -L -o /var/www/html/shine.zip https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip
 
 # Set the working directory to /var/www/html/
 WORKDIR /var/www/html/
@@ -7,11 +16,8 @@ WORKDIR /var/www/html/
 # Unzip the shine.zip file
 RUN unzip shine.zip
 
-# Copy the contents of the shine directory to the current directory
-RUN cp -rvf shine/* .
-
-# Remove the shine directory and the zip file
-RUN rm -rf shine shine.zip
+# Remove the shine.zip file
+RUN rm shine.zip
 
 # Start Apache HTTP server in the foreground when a container is started
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
