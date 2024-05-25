@@ -1,5 +1,5 @@
 # Add the zip file from the URL to the /var/www/html/ directory
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
+COPY https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
 
 # Set the working directory to /var/www/html/
 WORKDIR /var/www/html/
